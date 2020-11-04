@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::resource('yazilar', 'App\Http\Controllers\YaziController');
 Route::get('yazilar', 'App\Http\Controllers\YaziController@create');
 Route::post('yazilar', 'App\Http\Controllers\YaziKategoriController@store');
+Route::resource('test', 'App\Http\Controllers\TestController');
+Route::get('test', 'App\Http\Controllers\TestController@create');
 
 
 
