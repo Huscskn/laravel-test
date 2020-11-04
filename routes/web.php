@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('yazilar', 'App\Http\Controllers\YaziController@index');
+Route::resource('yazilar', 'App\Http\Controllers\YaziController');
+Route::get('yazilar', 'App\Http\Controllers\YaziController@create');
+Route::post('yazilar', 'App\Http\Controllers\YaziKategoriController@store');
+
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use App\Models\r;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        $kategoriler = kategori::where('id',1)->get();
+        return view('yazilar', compact('kategoriler'));
     }
 
     /**

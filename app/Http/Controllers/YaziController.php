@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
+use App\Models\Yazi;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Array_;
 
 class YaziController extends Controller
 {
@@ -13,6 +16,7 @@ class YaziController extends Controller
      */
     public function index()
     {
+
         return view('yazilarmaster');
     }
 
@@ -23,8 +27,12 @@ class YaziController extends Controller
      */
     public function create()
     {
-        //
+        $yazilar = yazi::all();
+        $kategoriler = kategori::all();
+        return view('yazilarmaster', compact('yazilar','kategoriler'));
+
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +42,11 @@ class YaziController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $array = array(
+        Request('object_key'),
+        Request('relation_key')
+    );
+    return response()->json($array);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tree;
 use Illuminate\Http\Request;
 
 class YaziKategoriController extends Controller
@@ -35,9 +36,9 @@ class YaziKategoriController extends Controller
     public function store(Request $request)
     {
         tree::create([
-            'object_key' => $request->object_key,
-            'object_value' => $request->object_value,
-            'relation_key' => $request->relation_key,
+            'object_key' => 'Yazi',
+            'object_value' => $request->object_key,
+            'relation_key' => 'Kategori',
             'relation_value' => $request->relation_key,
         ]);
 
